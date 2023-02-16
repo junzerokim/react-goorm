@@ -1,5 +1,7 @@
+import Header from 'components/moleclues/Header';
+
 function Main() {
-  return <div>Main</div>;
+  return <Header />;
 }
 
 export default Main;

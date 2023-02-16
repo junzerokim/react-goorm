@@ -4,7 +4,7 @@ import { fontSize } from 'styles';
 
 interface ITextProps extends HTMLAttributes<HTMLSpanElement> {
   color?: string;
-  size: 'xsmall' | 'small' | 'regular' | 'medium' | 'large';
+  size?: 'xsmall' | 'small' | 'regular' | 'medium' | 'large';
 }
 
 function Text({ children, ...rest }: ITextProps) {
@@ -22,6 +22,6 @@ const SIZE_OBJ = {
 };
 
 const StyledText = styled.span<ITextProps>`
-  font-size: ${({ size }) => SIZE_OBJ[size]};
+  font-size: ${({ size = 'regular' }) => SIZE_OBJ[size]};
   color: ${({ color }) => color};
 `;
