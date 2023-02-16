@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Text from 'components/atoms/Text';
+import { Text } from 'components/atoms';
 import { flex, colors } from 'styles';
 
 function Header() {
@@ -41,19 +41,19 @@ export default Header;
 const Container = styled.header`
   ${flex('space-between', 'center', 'row')};
   margin: auto;
-  width: 80%;
+  width: 100%;
   position: sticky;
   top: 0px;
 `;
 
 const ContainerLeft = styled.div`
-  ${flex('flex-start', 'center', 'row')}
+  ${flex('flex-start', 'center', 'row')};
 `;
 
 const ContainerRight = styled.div`
-  ${flex('flex-end', 'center', 'row')}
+  ${flex('flex-end', 'center', 'row')};
 `;
 
 const FamilyServices = styled.div`
-  ${flex('center', 'center', 'row')}
+  ${flex('center', 'center', 'row')};
 `;

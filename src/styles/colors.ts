@@ -5,6 +5,7 @@ const colors = {
   BLACK_X3: '#3e404c',
   BLACK_X4: '#313338',
   BLACK_X5: '#2b2d36',
+  BLACK_X6: '#49425F',
   BLUE_X1: '#5094fa',
   BLUE_X2: '#0b53bd',
   BLUE_X3: '#004d8c',

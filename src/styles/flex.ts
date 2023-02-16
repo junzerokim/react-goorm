@@ -13,7 +13,18 @@ type IJustifyContent =
   | 'initial'
   | 'inherit';
 
-type IAlignItems = '' | 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'initial' | 'inherit';
+type IAlignItems =
+  | ''
+  | 'stretch'
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
+  | 'baseline'
+  | 'initial'
+  | 'inherit';
 
 type IFlexDirection = 'column' | 'row' | 'column-reverse' | 'row-reverse';
 
