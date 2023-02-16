@@ -49,7 +49,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-  @font-face {
+@font-face {
     font-family: 'Noto Sans KR';
     font-weight: 700;
     font-style: normal;
