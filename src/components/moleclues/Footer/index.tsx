@@ -117,6 +117,7 @@ const Container = styled.div`
 const FooterTop = styled.div`
   ${flex('center', 'flex-start', 'row')};
   width: 100%;
+  gap: 15px;
 `;
 
 const FooterBody = styled.div`
