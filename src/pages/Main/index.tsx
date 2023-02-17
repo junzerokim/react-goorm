@@ -1,22 +1,22 @@
-import Header from 'components/moleclues/Header';
-import Footer from 'components/moleclues/Footer';
 import styled from 'styled-components';
 import { flex } from 'styles/';
+import { Layout, Wrapper } from 'components/template';
 
 function Main() {
   return (
-    <Container>
-      <Header />
-      <Footer />
-    </Container>
+    <Layout>
+      <Container>
+        <Wrapper>.</Wrapper>
+      </Container>
+    </Layout>
   );
 }
 
 export default Main;
 
 const Container = styled.div`
-  ${flex('center', 'center', 'column')}
-  margin: auto;
-  width: 80%;
-  height: 100vh;
+  /* ${flex('center', 'center', 'column')} */
+  /* margin: auto; */
+  /* width: 80%; */
+  /* height: 100vh; */
 `;

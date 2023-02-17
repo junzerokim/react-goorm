@@ -6,12 +6,12 @@ interface IWrapperLayout {
   children: ReactNode;
 }
 
-function WrapperLayout({ children }: IWrapperLayout) {
-  return <Wrapper>{children}</Wrapper>;
+function Wrapper({ children }: IWrapperLayout) {
+  return <WrapperLayout>{children}</WrapperLayout>;
 }
 
-export default WrapperLayout;
+export default Wrapper;
 
-const Wrapper = styled.div`
+const WrapperLayout = styled.div`
   ${flex('space-between', '')};
 `;
