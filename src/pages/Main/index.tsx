@@ -1,12 +1,27 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { flex } from 'styles/';
 import { Layout, Wrapper } from 'components/template';
+import { flex } from 'styles/';
+import { ILecture } from 'types/lecture';
 
 function Main() {
+  const [lectureList, setLectureList] = useState<ILecture[]>([]);
+  useEffect(() => {
+    const dataFetch = async () => {
+      const res = await fetch('http://localhost:4000/lectures');
+      const data = await res.json();
+      setLectureList(data);
+    };
+    dataFetch();
+  }, []);
   return (
     <Layout>
       <Container>
-        <Wrapper>.</Wrapper>
+        <Wrapper>
+          {lectureList.map((lecture) => (
+            <span>{lecture.name}</span>
+          ))}
+        </Wrapper>
       </Container>
     </Layout>
   );

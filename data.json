@@ -1,14 +1,24 @@
 {
-  "data": [
+  "lectures": [
     {
       "id": 1,
-      "name": "panda",
-      "age": 14
+      "name": "차근차근 PyTorch & TorchVision - MLOps를 위한 모델 실험 추적 & 모델 웹앱 배포까지",
+      "author": "구름",
+      "price": 249000,
+      "level": "보통",
+      "like": 259,
+      "star": 4.5,
+      "thumbnail": "https://grm-project-template-bucket.s3.ap-northeast-2.amazonaws.com/lecture/lec_VbSRk_1674112840646/coverImage.png?_=1674731839599"
     },
     {
       "id": 2,
-      "name": "giraffe",
-      "age": 30
+      "name": "차근차근 PyTorch & TorchVision - MLOps를 위한 모델 실험 추적 & 모델 웹앱 배포까지",
+      "author": "구름",
+      "price": 249000,
+      "level": "보통",
+      "like": 259,
+      "star": 4.5,
+      "thumbnail": "https://grm-project-template-bucket.s3.ap-northeast-2.amazonaws.com/lecture/lec_VbSRk_1674112840646/coverImage.png?_=1674731839599"
     }
   ]
 }
