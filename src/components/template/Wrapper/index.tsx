@@ -13,5 +13,7 @@ function Wrapper({ children }: IWrapperLayout) {
 export default Wrapper;
 
 const WrapperLayout = styled.div`
-  ${flex('space-between', '')};
+  ${flex('center', '', 'column')};
+  margin: auto;
+  width: 90%;
 `;
