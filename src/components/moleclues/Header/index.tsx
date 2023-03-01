@@ -110,7 +110,7 @@ const HeaderTopRight = styled.div`
 
 const HeaderMid = styled.div`
   ${flex('space-between', '', 'row')}
-  width: 90%;
+  width: 100%;
 `;
 
 const HeaderMidLeft = styled.div`
