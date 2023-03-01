@@ -10,9 +10,9 @@ import { FiChevronRight } from 'react-icons/fi';
 
 function Main() {
   const images = useRef([
-    { src: '/img/lg.png' },
-    { src: '/img/' },
-    { src: 'https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white' },
+    { src: '/img/slideImg/lg.png' },
+    { src: '/img/slideImg/lg2.png' },
+    { src: '/img/slideImg/lg3.png' },
   ]);
 
   const [lectureList, setLectureList] = useState<ILecture[]>([]);
@@ -44,18 +44,22 @@ function Main() {
   useEffect(() => {
     setStyle({ transform: `translate(-${current}00%)`, transition: 'transform 1s' });
   }, [current]);
+
   return (
     <Layout>
       <Container>
         <Wrapper>
-          <SliderLBtn onClick={() => moveSlide(-1)}>&lt;</SliderLBtn>
-          <SliderImg style={style}>
-            {images.current.map((img, i) => (
-              <div key={i} style={{ backgroundImage: `url(${img.src})` }}></div>
-            ))}
-            <SliderLgImg src="/img/lg.png" />
-          </SliderImg>
-          <SliderRBtn onClick={() => moveSlide(1)}>&gt;</SliderRBtn>
+          <SliderBox>
+            <SliderLBtn onClick={() => moveSlide(-1)}>&lt;</SliderLBtn>
+            <SliderImgBox>
+              <SliderImg style={style}>
+                {images.current.map((img, i) => (
+                  <Img key={i} style={{ backgroundImage: `url(${img.src})` }} />
+                ))}
+              </SliderImg>
+            </SliderImgBox>
+            <SliderRBtn onClick={() => moveSlide(1)}>&gt;</SliderRBtn>
+          </SliderBox>
           <FirstClassBox>
             <FirstClassTab>
               <Text size="small">실시간 할인💸</Text>
@@ -286,7 +290,7 @@ const ClassWrap = styled.div`
 `;
 
 const SliderImg = styled.div`
-  ${flex('', 'center')}
+  ${flex('', '')}
 `;
 
 const SliderLBtn = styled.div`
@@ -303,4 +307,24 @@ const SliderRBtn = styled.div`
   font-size: 30px;
   color: blue;
   padding: 0 10px;
+`;
+
+const SliderImgBox = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+
+const Img = styled.div`
+  width: 100%;
+  height: 410px;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: none;
+`;
+
+const SliderBox = styled.div`
+  ${flex('center', 'center')}
+  width: 100%;
 `;
