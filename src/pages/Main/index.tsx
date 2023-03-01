@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { Text } from 'components/atoms';
 import { Layout, Wrapper } from 'components/template';
@@ -9,7 +9,29 @@ import { AiFillStar } from 'react-icons/ai';
 import { FiChevronRight } from 'react-icons/fi';
 
 function Main() {
+  const images = useRef([
+    { src: '/img/lg.png' },
+    { src: '/img/' },
+    { src: 'https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white' },
+  ]);
+
   const [lectureList, setLectureList] = useState<ILecture[]>([]);
+  const [current, setCurrent] = useState(0);
+  const [style, setStyle] = useState({
+    transform: `translate(-${current}00%)`,
+    transition: 'transform 1s',
+  });
+
+  const imgSize = useRef(images.current.length);
+
+  const moveSlide = (e: any) => {
+    let nextIndex = current + e;
+
+    if (nextIndex < 0) nextIndex = imgSize.current - 1;
+    else if (nextIndex >= imgSize.current) nextIndex = 0;
+
+    setCurrent(nextIndex);
+  };
   useEffect(() => {
     const dataFetch = async () => {
       const res = await fetch('http://localhost:4000/lectures');
@@ -18,14 +40,22 @@ function Main() {
     };
     dataFetch();
   }, []);
+
+  useEffect(() => {
+    setStyle({ transform: `translate(-${current}00%)`, transition: 'transform 1s' });
+  }, [current]);
   return (
     <Layout>
       <Container>
         <Wrapper>
-          <SliderLgImg src="/img/lg.png" />
-          {/* {lectureList.map((lecture) => (
-            <span>{lecture.name}</span>
-          ))} */}
+          <SliderLBtn onClick={() => moveSlide(-1)}>&lt;</SliderLBtn>
+          <SliderImg style={style}>
+            {images.current.map((img, i) => (
+              <div key={i} style={{ backgroundImage: `url(${img.src})` }}></div>
+            ))}
+            <SliderLgImg src="/img/lg.png" />
+          </SliderImg>
+          <SliderRBtn onClick={() => moveSlide(1)}>&gt;</SliderRBtn>
           <FirstClassBox>
             <FirstClassTab>
               <Text size="small">실시간 할인💸</Text>
@@ -253,4 +283,24 @@ const ClassPrefer = styled.div`
 const ClassWrap = styled.div`
   ${flex('space-between', '', 'column')}
   gap: 15px;
+`;
+
+const SliderImg = styled.div`
+  ${flex('', 'center')}
+`;
+
+const SliderLBtn = styled.div`
+  ${flex('center', 'center')}
+  cursor: pointer;
+  font-size: 30px;
+  color: blue;
+  padding: 0 10px;
+`;
+
+const SliderRBtn = styled.div`
+  ${flex('center', 'center')}
+  cursor: pointer;
+  font-size: 30px;
+  color: blue;
+  padding: 0 10px;
 `;
