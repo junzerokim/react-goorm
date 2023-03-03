@@ -79,6 +79,7 @@ function Header() {
 export default Header;
 
 const Wrapper = styled.div`
+  margin-top: 10px;
   padding-bottom: 25px;
   width: 100%;
   border-bottom: 1px solid lightgray;
