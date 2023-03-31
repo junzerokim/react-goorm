@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { Text } from 'components/atoms';
+import { Text, SearchBar } from 'components/atoms';
 import { flex, colors } from 'styles';
 import { BiChevronsLeft } from 'react-icons/bi';
 import { RiGlobalLine } from 'react-icons/ri';
 import { FiChevronDown } from 'react-icons/fi';
-import { IoSearchCircle } from 'react-icons/io5';
 import { HiSquares2X2 } from 'react-icons/hi2';
 
 function Header() {
@@ -52,8 +51,7 @@ function Header() {
             <Text color={colors.BLACK_X5} size="large">
               goorm
             </Text>
-            <SearchBar placeholder="무엇을 배우고 싶으세요?" type="text" />
-            <IoSearchCircle size={35} />
+            <SearchBar />
           </HeaderMidLeft>
           <HeaderMidRight>
             <Text color={colors.BLACK_X5} size="xsmall">
@@ -127,16 +125,4 @@ const HeaderBottom = styled.div`
   ${flex('', '', 'row')}
   width: 90%;
   gap: 10px;
-`;
-
-const SearchBar = styled.input`
-  border-radius: 20px;
-  border: none;
-  background-color: #f7f7fa;
-  width: 250px;
-  height: 40px;
-  padding: 0 20px;
-  :focus {
-    outline: none;
-  }
 `;
